@@ -26,6 +26,14 @@ namespace BookStore.Web
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            //enable minification
+            BundleTable.EnableOptimizations = true;
+            //if in debug mode disable minification
+            if (HttpContext.Current.IsDebuggingEnabled)
+            {
+                BundleTable.EnableOptimizations = false;
+            }
         }
     }
 }
