@@ -92,6 +92,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BookStore.MockService\BookStore.MockService.csproj">
+      <Project>{9FC2E0CF-56F7-4CE8-86F5-EDD48CDEC5C4}</Project>
+      <Name>BookStore.MockService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\BookStore.Web\BookStore.Web.csproj">
       <Project>{3528CF9E-7A74-4488-A453-8B4DC069D5DC}</Project>
       <Name>BookStore.Web</Name>
