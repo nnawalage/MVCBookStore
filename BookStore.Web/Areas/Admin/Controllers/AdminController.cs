@@ -72,10 +72,10 @@ namespace BookStore.Web.Areas.Admin.Controllers
 
         public ActionResult Index()
         {
-            if (TempData.ContainsKey("message"))
-            {
-                ViewBag.Message = TempData["message"];
-            }
+            //if (TempData.ContainsKey("message"))
+            //{
+            //    ViewBag.Message = TempData["message"];
+            //}
             return View();
         }
     }
