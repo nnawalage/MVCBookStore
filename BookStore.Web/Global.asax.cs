@@ -17,5 +17,10 @@ namespace BookStore.Web
             AreaRegistration.RegisterAllAreas();
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
+
+        //protected void Application_Error()
+        //{
+
+        //}
     }
 }
