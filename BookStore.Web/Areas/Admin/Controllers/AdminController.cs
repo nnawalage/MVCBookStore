@@ -10,10 +10,18 @@ using System.Web.Mvc;
 namespace BookStore.Web.Areas.Admin.Controllers
 {
     //[RoutePrefix("BookStore")]
+    //[RouteArea("Admin")]
+    //[Authorize]
+    //[Authorize(Users ="ndn1@tiqri.com")]
     public class AdminController : BookStoreBaseController
     {
+
+        //If only route prefix is used= /BookStore/AddBook
         // GET: Admin/Admin
         //[Route]
+        //[OverrideAuthorization]
+        //[Authorize(Users = "ndn@tiqri.com")]
+       // [Route("AddNewBook")]
         public ActionResult AddBook()
         {
             //ViewBag.Title = "Add Book";
@@ -29,6 +37,8 @@ namespace BookStore.Web.Areas.Admin.Controllers
             };
 
             return View(viewModel);
+            //return View("~/Areas/Admin/Views/Admin/AddBook.cshtml",viewModel);
+
         }
 
         [HttpPost]
@@ -40,12 +50,12 @@ namespace BookStore.Web.Areas.Admin.Controllers
             {
                 Book book = new Book()
                 {
-                    Name=model.Name,
-                    Isbn=model.Isbn,
-                    Price=model.Price,
-                    CategoryId=model.CategoryId,
-                    CreatedDate=DateTime.Now,
-                    CreatedBy=HttpContext.User.Identity.Name
+                    Name = model.Name,
+                    Isbn = model.Isbn,
+                    Price = model.Price,
+                    CategoryId = model.CategoryId,
+                    CreatedDate = DateTime.Now,
+                    CreatedBy = HttpContext.User.Identity.Name
                 };
 
                 BookStoreService.SaveBook(book);
